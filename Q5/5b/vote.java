@@ -28,7 +28,9 @@ public class vote extends HttpServlet {
 		
 		//additionally you can print name and email if preferred
 		String firstName = request.getParameter("firstName");
-	        String dob = request.getParameter("dob");
+		String lastName = request.getParameter("lastName");
+		String email = request.getParameter("email");
+		String dob = request.getParameter("dob");
 	        
 	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	        LocalDate birthDate = LocalDate.parse(dob, formatter);
@@ -36,10 +38,12 @@ public class vote extends HttpServlet {
 	
 	        int age = Period.between(birthDate, currentDate).getYears();
 	        
-	        
+	  		      
 	        if (age >= 18) 
 	        {
-	            out.println("<p>Status: <strong>Eligible to vote</strong></p>");
+		    	out.println("<p>Name: <strong>" + firstName + " " + lastName + "</strong></p>");
+		    	out.println("<p>Email: <strong>" + email + "</strong></p>");
+		    	out.println("<p>Status: <strong>Eligible to vote</strong></p>");
 	        } 
 	        else 
 	        {

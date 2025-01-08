@@ -43,10 +43,10 @@
 					
 					if(rs.next())
 					{
-						int id = rs.getInt("usn");
-						String name = rs.getString("name");
+						int Usn = rs.getInt("usn");
+						String Name = rs.getString("name");
 						
-						out.println("<tr><td>" + id + "</td><td>" + name + "</td></tr>");
+						out.println("<tr><td>" + Usn + "</td><td>" + Name + "</td></tr>");
 					}
 					else
 					{

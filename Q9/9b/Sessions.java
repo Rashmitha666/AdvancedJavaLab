@@ -19,28 +19,28 @@ public class Sessions extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        
-        HttpSession session = request.getSession();
-        
-        Integer visitCount = (Integer) session.getAttribute("visitCount");
-        
-        if(visitCount == null)
-        {
-        	visitCount = 1;
-        	session.setAttribute("visitCount", visitCount);
-        	
-        	out.println("<h1>Welcome to the webpage!</h1>");
-            out.println("<p>This is your first visit.</p>");
-        }
-        else
-        {
-        	visitCount++;
-            session.setAttribute("visitCount", visitCount);
-
-            out.println("<h1>Welcome back!</h1>");
-            out.println("<p>You have visited this page " + visitCount + " times.</p>");
-        }
+	        PrintWriter out = response.getWriter();
+	        
+	        HttpSession session = request.getSession();
+	        
+	        Integer visitCount = (Integer) session.getAttribute("visitCount");
+	        
+	        if(visitCount == null)
+	        {
+	        	visitCount = 1;
+	        	session.setAttribute("visitCount", visitCount);
+	        	
+	        	out.println("<h1>Welcome to the webpage!</h1>");
+	            out.println("<p>This is your first visit.</p>");
+	        }
+	        else
+	        {
+	        	visitCount++;
+	            session.setAttribute("visitCount", visitCount);
+	
+	            out.println("<h1>Welcome back!</h1>");
+	            out.println("<p>You have visited this page " + visitCount + " times.</p>");
+	        }
     }
 
 }

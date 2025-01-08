@@ -15,7 +15,7 @@
 			for(var cookie: cookies)
 			{
 				out.println("Name: " + cookie.getName() + "<br>");
-	            out.println("Value: " + cookie.getValue() + "<br>");
+	            		out.println("Value: " + cookie.getValue() + "<br>");
 			}
 		}
 		else

@@ -24,15 +24,13 @@
 					String pass = "";
 					
 					Connection conn = null;
-					Statement stmt = null;
 					PreparedStatement ps = null;
 					
 
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					
-					conn = DriverManager.getConnection(url, user, pass);
-					stmt = conn.createStatement();
-					
+					conn = DriverManager.getConnection(url, user, pass); 
+
 					int usn = Integer.parseInt(request.getParameter("usn"));
 					
 					String sqlQuery = "Select * from Student where usn = ?";

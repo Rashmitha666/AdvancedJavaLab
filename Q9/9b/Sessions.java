@@ -36,7 +36,7 @@ public class Sessions extends HttpServlet {
 	        else
 	        {
 	        	visitCount++;
-	            session.setAttribute("visitCount", visitCount);
+	                session.setAttribute("visitCount", visitCount);
 	
 	            out.println("<h1>Welcome back!</h1>");
 	            out.println("<p>You have visited this page " + visitCount + " times.</p>");

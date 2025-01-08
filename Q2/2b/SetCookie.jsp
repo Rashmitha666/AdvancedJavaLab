@@ -9,7 +9,7 @@
 <body>
 	<%
 			Cookie cookie1 = new Cookie("user1", "value1");
-	        Cookie cookie2 = new Cookie("user2", "value2");
+	        	Cookie cookie2 = new Cookie("user2", "value2");
 			Cookie cookie3 = new Cookie("user3", "value3");
 			
 			cookie1.setMaxAge(60);
@@ -23,7 +23,7 @@
 	%>
 
 			<h2>Cookies have been set!</h2>
-		    <p>Go to <a href="GetCookie.jsp">GetCookies.jsp</a> to retrieve and display them.</p>
+		    	<p>Go to <a href="GetCookie.jsp">GetCookies.jsp</a> to retrieve and display them.</p>
 			
 </body>
 </html>

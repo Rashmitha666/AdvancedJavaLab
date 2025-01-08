@@ -21,32 +21,29 @@ public class vote extends HttpServlet {
         super();
      
     }
-
-	
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
 		//additionally you can print name and email if preferred
-        String dob = request.getParameter("dob");
-        
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate birthDate = LocalDate.parse(dob, formatter);
-        LocalDate currentDate = LocalDate.now();
-
-        int age = Period.between(birthDate, currentDate).getYears();
-        
-        
-        if (age >= 18) 
-        {
-            out.println("<p>Status: <strong>Eligible to vote</strong></p>");
-        } 
-        else 
-        {
-            out.println("<p>Status: <strong>Not eligible to vote</strong></p>");
-        }
+	        String dob = request.getParameter("dob");
+	        
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	        LocalDate birthDate = LocalDate.parse(dob, formatter);
+	        LocalDate currentDate = LocalDate.now();
+	
+	        int age = Period.between(birthDate, currentDate).getYears();
+	        
+	        
+	        if (age >= 18) 
+	        {
+	            out.println("<p>Status: <strong>Eligible to vote</strong></p>");
+	        } 
+	        else 
+	        {
+	            out.println("<p>Status: <strong>Not eligible to vote</strong></p>");
+	        }
 		
 	}
 

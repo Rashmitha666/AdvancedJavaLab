@@ -36,32 +36,32 @@ public class Police extends HttpServlet
 		
 		try
 		{
-			Class.forName("com.mysql.cj.jdbc.Driver");
+		    Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			conn = DriverManager.getConnection(url, user, pass);
+		    conn = DriverManager.getConnection(url, user, pass);
 			
-            String query = "SELECT * FROM police_station WHERE area = ? OR phone_number = ?";
-            ps = conn.prepareStatement(query);
-            ps.setString(1, input);
-            ps.setString(2, input);
-            
-            ResultSet rs = ps.executeQuery();
-            
-            if(rs.next())
-            {
-            	String area = rs.getString("area");
-                String phoneNumber = rs.getString("phone_number");
-
-                out.println("<p>Area: " + area + "</p>");
-                out.println("<p>Phone Number: " + phoneNumber + "</p>");
-            }
+		    String query = "SELECT * FROM police_station WHERE area = ? OR phone_number = ?";
+		    ps = conn.prepareStatement(query);
+		    ps.setString(1, input);
+		    ps.setString(2, input);
+		    
+		    ResultSet rs = ps.executeQuery();
+		    
+		    if(rs.next())
+		    {
+			String area = rs.getString("area");
+			String phoneNumber = rs.getString("phone_number");
+	
+			out.println("<p>Area: " + area + "</p>");
+			out.println("<p>Phone Number: " + phoneNumber + "</p>");
+		    }
 
 
 		}
 		catch (Exception e) 
 		{
-            e.printStackTrace();
-        }
+            		e.printStackTrace();
+        	}
 	}
 
 }

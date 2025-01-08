@@ -27,6 +27,7 @@ public class vote extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		//additionally you can print name and email if preferred
+		String firstName = request.getParameter("firstName");
 	        String dob = request.getParameter("dob");
 	        
 	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

@@ -12,7 +12,8 @@ import java.io.PrintWriter;
 
 
 @WebServlet("/Sessions")
-public class Sessions extends HttpServlet {
+public class Sessions extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
        
     
